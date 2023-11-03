@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>Payment</title>
+  <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans:400" rel="stylesheet">
+<style>
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.section {
+	position: relative;
+	height: 100vh;
+}
+
+.section .section-center {
+	position: absolute;
+	top: 40%;
+	left: 25%;
+	right: 0;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+body {
+	
+	font-family: 'PT Sans', sans-serif;
+	background-image: url('background.jpeg');
+	background-size: cover;
+	background-position: center;
+	background-repeat:no-repeat;
+	
+}
+
+.booking-form {
+	background: rgba(0, 0, 0, 0.7);
+	padding: 40px;
+	border-radius: 6px;
+}
+
+.booking-form .form-group {
+	position: relative;
+	margin-bottom: 20px;
+	
+}
+
+.booking-form .form-control {
+	background-color: #fff;
+	height: 50px;
+	color: #191a1e;
+	border: none;
+	font-size: 16px;
+	font-weight: 400;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border-radius: 40px;
+	padding: 0px 25px;
+}
+
+.booking-form .form-control::-webkit-input-placeholder {
+	color: rgba(82, 82, 84, 0.4);
+}
+
+.booking-form .form-control:-ms-input-placeholder {
+	color: rgba(82, 82, 84, 0.4);
+}
+
+.booking-form .form-control::placeholder {
+	color: rgba(82, 82, 84, 0.4);
+}
+
+.booking-form input[type="date"].form-control:invalid {
+	color: rgba(82, 82, 84, 0.4);
+}
+
+.booking-form select.form-control {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.booking-form select.form-control+.select-arrow {
+	position: absolute;
+	right: 10px;
+	bottom: 6px;
+	width: 32px;
+	line-height: 32px;
+	height: 32px;
+	text-align: center;
+	pointer-events: none;
+	color: rgba(0, 0, 0, 0.3);
+	font-size: 14px;
+}
+
+.booking-form select.form-control+.select-arrow:after {
+	content: '\279C';
+	display: block;
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+.booking-form .form-label {
+	display: block;
+	margin-left: 20px;
+	margin-bottom: 5px;
+	font-weight: 400;
+	text-transform: uppercase;
+	line-height: 24px;
+	height: 24px;
+	font-size: 12px;
+	color: #fff;
+}
+
+.booking-form .form-checkbox input {
+	position: absolute !important;
+	margin-left: -9999px !important;
+	visibility: hidden !important;
+}
+
+.booking-form .form-checkbox label {
+	position: relative;
+	padding-top: 4px;
+	padding-left: 30px;
+	font-weight: 400;
+	color: #fff;
+}
+
+.booking-form .form-checkbox label+label {
+	margin-left: 15px;
+}
+
+.booking-form .form-checkbox input+span {
+	position: absolute;
+	left: 2px;
+	top: 4px;
+	width: 20px;
+	height: 20px;
+	background: #fff;
+	border-radius: 50%;
+}
+
+.booking-form .form-checkbox input+span:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 0px;
+	height: 0px;
+	border-radius: 50%;
+	background-color: #006400;
+	-webkit-transition: 0.2s all;
+	transition: 0.2s all;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.booking-form .form-checkbox input:not(:checked)+span:after {
+	opacity: 0;
+}
+
+.booking-form .form-checkbox input:checked+span:after {
+	opacity: 1;
+	width: 10px;
+	height: 10px;
+}
+
+.booking-form .form-btn {
+	margin-top: 27px;
+}
+
+.booking-form .submit-btn {
+	color: #fff;
+	background-color: #006400;
+	font-weight: 100px;
+	height: 50px;
+	font-size: 14px;
+	border: none;
+	width: 100%;
+	border-radius: 40px;
+	text-transform: uppercase;
+	-webkit-transition: 0.2s all;
+	transition: 0.2s all;
+}
+.submit {
+	margin-top: -20px;
+	margin-left:15px;
+}
+
+
+.booking-form .submit-btn:hover,
+.booking-form .submit-btn:focus {
+	opacity: 0.9;
+}
+h2{
+color: #fff;
+}
+
+.row {
+display: -ms-flexbox;display: flex;-ms-flex-wrap: wrap;flex-wrap: wrap;margin: 0 -16px;
+}
+.col-25,.col-50,.col-75 {
+padding: 20px; 
+}
+input[type=text] , input[type=number]{
+width: 40%;
+margin-bottom: 20px;
+padding: 12px;border: 1px #fff;
+border-radius: 3px;
+}
+label {
+margin-bottom: 10px;display: block; 
+color:white;
+}
+@media (max-width: 800px) {
+
+.modal-content {
+background-color: #fefefe;
+margin: auto;padding: 30px;
+border: 1px solid #888;
+width: 40%;
+}
+.close {color: #aaaaaa;float: right;
+font-size: 28px;
+font-weight: bold;
+}
+	
+.footer1 {
+
+position:absolute;
+   left: 4px;
+   bottom: 200px;
+   width: 100%;
+   size: 80px;
+  background-color:#f2f2f2;
+   color: black ;
+   text-align:center;
+}
+.fa {
+  padding: 20px;
+  font-size: 60px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+</style>
+</head>
+
+
+<header>
+
+<nav class="navbar navbar-default"   style="height: 100px;">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+     
+<div class="navbar-brand" >
+  <img class="logo"
+       src="logoo.png" alt="Logo" style="float:left; width: 130px ; height: 80px ;  " > </div>
+   </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <br>
+ <ul class="nav navbar-nav" >
+ <li style="font-size:21px;color: black;"><a href="HOOM.php " ><i class="glyphicon glyphicon-home"></i> Home </a></li> 
+<li style="font-size:21px; color: black;">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> 
+		  <i class='fas fa-calendar-check'></i> Reservation <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+
+            <li style="font-size:21px; color: black; "><a href="flights.php"><i class='fas fa-plane'></i> Flights</a></li>
+ <li role="separator" class="divider"></li>
+            <li style="font-size:21px; color: black; "><a href="category.php"><i class='fas fa-hotel'></i></i> Hotels</a></li>
+ <li role="separator" class="divider"></li>
+            <li style="font-size:21px; color: black; "><a href="category.php"><i class='fas fa-hotel'></i></i> House</a></li>
+
+             <li role="separator" class="divider"></li>
+            <li style="font-size:21px; color: black; "><a href="category.php"> <i class='fas fa-users'></i> Package</a></li>
+</ul>
+        </li>
+  <li style="font-size:21px;  color: black;"><a href="index.php" > <i class='fas fa-umbrella-beach'></i> Events</a></li> 
+
+      <li style="font-size:21px;  color: black;"><a href="index.php" > <i class='fas fa-mug-hot'></i> Try</a></li>
+      
+   <li style="font-size:21px;  color: black;"><a href="Transportion.php" > <i class='fas fa-car'></i> Transportion</a></li>
+
+ <li style="font-size:21px;  color: black;"><a href="VISA.php"> <i class='fas fa-passport'></i> Visa</a></li>
+    
+<li style="font-size:21px;  color: black;"><a href="Ask.php"><i class='fas fa-question-circle'></i>  Ask Question</a></li>
+    
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+</div>
+</header>
+<body>
+
+
+<div id="booking" class="section">
+<div class="section-center">	
+<div class="container">
+<div class="row">
+<div class="booking-form">
+<form>
+        
+            <h2><strong>Payment</strong></h2>
+
+            <div class="icon-container">
+                <img src="mastercard.png"  style="width:70px;height:40px;">
+                <img src="visa.jfif"  style="width:70px;height:40px;">
+                <img src="mada.png" style="width:70px;height:40px;">
+            </div>
+		<br>
+		 <br>
+            <label for="cname">Name on Card</label>
+            <input type="text" id="cname" name="cardname" placeholder="Mohammed Ahmed" required>
+            <label for="ccnum">Credit card number</label>
+            <input type="number" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" maxlength="20" required>
+            <label for="expmonth">Exp Month</label>
+            <input type="text" id="expmonth" name="expmonth" placeholder="November" required>
+        <div class="row">
+          <div class="col-50">
+                <label for="expyear">Exp Year</label>
+                <input type="number" id="expyear" name="expyear" placeholder="2021" maxlength="4" required>
+              </div>
+              <div class="col-50">
+                <label for="cvv">CVV</label>
+                <input type="number" id="cvv" name="cvv" placeholder="352" maxlength="3" required >
+              </div>
+            </div>
+          
+
+<div class="form-btn"> 
+<button class="btn btn-info submit-btn submit">Continue to Checkout</button>
+</div>
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Thanks You..</p>
+</div>
+
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer1">
+  <a href="#" class="fa fa-facebook" style="font-size: 20px; color: #737373;" ></a>
+  <a href="#" class="fa fa-twitter" style="font-size:  20px; color: #737373;"></a>
+  <a href="#" class="fa fa-instagram"style="font-size:  20px; color: #737373;"></a>
+ 
+</div>
+</body>
+</html>
